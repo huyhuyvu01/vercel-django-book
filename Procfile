@@ -1,1 +1,1 @@
-web: gunicorn book_web_recommend.wsgi --log-file -
+web: python manage.py migrate && gunicorn book_web_recommend.wsgi --log-file -
