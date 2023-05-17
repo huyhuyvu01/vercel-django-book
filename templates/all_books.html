@@ -1,0 +1,462 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Huy Hải Books</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" href="{% static 'images/books.png'%}">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+      <!-- fevicon -->
+      <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+      <!-- font awesome -->
+      <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!--  -->
+      <!-- owl stylesheets -->
+      <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+      <link rel="stylesoeet" href="{% static 'css/owl.theme.default.min.css' %}">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   </head>
+   <body>
+      <!-- banner bg main start -->
+      <div class="banner_bg_main" >
+         <!-- header top section start -->
+         <div class="container">
+            <div class="header_section_top">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="custom_menu">
+                        <ul>
+                           <li><a href="#">Best Sellers</a></li>
+                           <li><a href="#">Gift Ideas</a></li>
+                           <li><a href="#">New Releases</a></li>
+                           <li><a href="#">Recommended Deals</a></li>
+                           <li><a href="https://github.com/huyhuyvu01/recommend_system_django">Github</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- header top section start -->
+         <!-- logo section start -->
+         <div class="logo_section">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}"></a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- logo section end -->
+         <!-- header section start -->
+         <div class="header_section">
+            <div class="container">
+               <div class="containt_main">
+                  <div id="mySidenav" class="sidenav">
+                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                     <a href="{% url 'home' %}">Home</a>
+                     <a href="{% url 'books' %}">All Books</a>
+                     <a href="{% url 'recommend' %}">Recommended</a>
+                     <a href="{% url 'author' %}">Author</a>
+                  </div>
+                  <span class="toggle_icon" onclick="openNav()"><img src="{% static 'images/toggle-icon.png' %}"></span>
+                  <div class="dropdown">
+                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category 
+                     </button>
+                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">In development</a>
+                        <a class="dropdown-item" href="#">In development</a>
+                        <a class="dropdown-item" href="#">In development</a>
+                     </div>
+                  </div>
+                  <div class="main">
+                     <!-- Another variation with a button -->
+                     <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search this site">
+                        <div class="input-group-append">
+                           <button class="btn btn-secondary" type="button" style="background-color: #f26522; border-color:#f26522 ">
+                           <i class="fa fa-search"></i>
+                           </button>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="header_box">
+                     <div class="login_menu">
+                        <ul>
+                           <li><a href="#">
+                              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                              <span class="padding_10">Cart</span></a>
+                           </li>
+                           <li><a href="{% url 'logout' %}">
+                              <i class="fa fa-user" aria-hidden="true"></i>
+                              <span class="padding_10">Log out</span></a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- header section end -->
+         <!-- banner section start -->
+         <div class="banner_section layout_padding">
+            <div class="container">
+               <div id="my_slider" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital">Today a reader<br>Tomorrow a leader</h1>
+                              
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital">Think before you speak<br>Read before you think</h1>
+                              {% comment %} <div class="buynow_bt"><a href="#">Buy Now</a></div> {% endcomment %}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital">Get Start <br>Your favorite shoping</h1>
+                              {% comment %} <div class="buynow_bt"><a href="#">Buy Now</a></div> {% endcomment %}
+                           </div>
+                        </div>
+                     </div>
+                     <div class="buynow_bt"><a href="#">Read Now</a></div>
+                  </div>
+                  <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                  <i class="fa fa-angle-left"></i>
+                  </a>
+                  <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                  <i class="fa fa-angle-right"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+         <!-- banner section end -->
+      </div>
+      <!-- banner bg main end -->
+        <br/>
+        
+        
+         <div style="text-align: center; display: none;" >
+            <h1 style="font-size: xx-large, w">All Books</h1>
+         </div>
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+               <div class="container">
+                  <div class="fashion_section_2">
+                     <div class="row">
+                        <div class="col-lg-4 col-sm-4">
+                           <div class="box_main">
+                              {% if books.0.title|wordcount >= 5 %}
+                              <marquee behavior="alternate" SCROLLAMOUNT="1" direction="left"><h4 class="shirt_text">{{books.0.title}}</h4></marquee>
+                              {% else %}
+                              <h4 class="shirt_text">{{books.0.title}}</h4>
+                              {% endif %}
+                              <div style="height: 100%; display: flex; justify-content: space-around;">
+                                <div style="float: left; width: 100%;position: relative;">
+                                    <div style="position: absolute;width: 100%;font-size: 16px; color: #262626;; margin: 0px;">
+                                        {{ books.0.author }}
+                                    </div>
+                                </div>
+                                <div style="float: right; width: 100%; position: relative;">
+                                    <div style="position: absolute; right: 0% ;font-size: 16px; color: #262626;; margin: 0px;">
+
+                                        {{ books.0.year_of_publication }}
+                                    </div>
+                                </div>
+                              </div>
+                                <div class="electronic_img"><img class="cus_img" src="{{ books.0.img_l }}"></div>
+                              
+                              
+                              <div class="btn_main">
+                                 <div class="buy_bt"><a href="#">Read now</a></div>
+                                 <div class="seemore_bt"><a href="{% url 'detail' books.0.ISBN %}">See More</a></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-4">
+                           <div class="box_main">
+                              {% if books.1.title|wordcount >= 5 %}
+                              <marquee behavior="alternate" SCROLLAMOUNT="1" direction="left"><h4 class="shirt_text">{{books.1.title}}</h4></marquee>
+                              {% else %}
+                              <h4 class="shirt_text">{{books.1.title}}</h4>
+                              {% endif %}
+                              <div style="height: 100%; display: flex; justify-content: space-around;">
+                                <div style="float: left; width: 100%;position: relative;">
+                                    <div style="position: absolute;width: 100%;font-size: 16px; color: #262626;; margin: 0px;">
+                                        {{ books.1.author }}
+                                    </div>
+                                </div>
+                                <div style="float: right; width: 100%; position: relative;">
+                                    <div style="position: absolute; right: 0% ;font-size: 16px; color: #262626;; margin: 0px;">
+
+                                        {{ books.1.year_of_publication }}
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="electronic_img"><img class="cus_img"src="{{ books.1.img_l }}"></div>
+                              <div class="btn_main">
+                                 <div class="buy_bt"><a href="#">Read now</a></div>
+                                 <div class="seemore_bt"><a href="{% url 'detail' books.1.ISBN %}">See More</a></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-4">
+                           <div class="box_main">
+                              {% if books.2.title|wordcount >= 5 %}
+                              <marquee behavior="alternate" SCROLLAMOUNT="1" direction="left"><h4 class="shirt_text">{{books.2.title}}</h4></marquee>
+                              {% else %}
+                              <h4 class="shirt_text">{{books.2.title}}</h4>
+                              {% endif %}
+                              <div style="height: 100%; display: flex; justify-content: space-around;">
+                                <div style="float: left; width: 100%;position: relative;">
+                                    <div style="position: absolute;width: 100%;font-size: 16px; color: #262626;; margin: 0px;">
+                                        {{ books.2.author }}
+                                    </div>
+                                </div>
+                                <div style="float: right; width: 100%; position: relative;">
+                                    <div style="position: absolute; right: 0% ;font-size: 16px; color: #262626;; margin: 0px;">
+
+                                        {{ books.2.year_of_publication }}
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="electronic_img"><img class="cus_img" src="{{ books.2.img_l }}"></div>
+                              <div class="btn_main">
+                                 <div class="buy_bt"><a href="#">Read now</a></div>
+                                 <div class="seemore_bt"><a href="{% url 'detail' books.2.ISBN %}">See More</a></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-lg-4 col-sm-4">
+                           <div class="box_main">
+                              {% if books.3.title|wordcount >= 5 %}
+                              <marquee behavior="alternate" SCROLLAMOUNT="1" direction="left"><h4 class="shirt_text">{{books.3.title}}</h4></marquee>
+                              {% else %}
+                              <h4 class="shirt_text">{{books.3.title}}</h4>
+                              {% endif %}
+                              <div style="height: 100%; display: flex; justify-content: space-around;">
+                                <div style="float: left; width: 100%;position: relative;">
+                                    <div style="position: absolute;width: 100%;font-size: 16px; color: #262626;; margin: 0px;">
+                                        {{ books.3.author }}
+                                    </div>
+                                </div>
+                                <div style="float: right; width: 100%; position: relative;">
+                                    <div style="position: absolute; right: 0% ;font-size: 16px; color: #262626;; margin: 0px;">
+
+                                        {{ books.3.year_of_publication }}
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="electronic_img"><img class="cus_img" src="{{ books.3.img_l }}"></div>
+                              <div class="btn_main">
+                                 <div class="buy_bt"><a href="#">Read now</a></div>
+                                 <div class="seemore_bt"><a href="{% url 'detail' books.3.ISBN %}">See More</a></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-4">
+                           <div class="box_main">
+                              {% if books.4.title|wordcount >= 5 %}
+                              <marquee behavior="alternate" SCROLLAMOUNT="1" direction="left"><h4 class="shirt_text">{{books.4.title}}</h4></marquee>
+                              {% else %}
+                              <h4 class="shirt_text">{{books.4.title}}</h4>
+                              {% endif %}
+                              <div style="height: 100%; display: flex; justify-content: space-around;">
+                                <div style="float: left; width: 100%;position: relative;">
+                                    <div style="position: absolute;width: 100%;font-size: 16px; color: #262626;; margin: 0px;">
+                                        {{ books.4.author }}
+                                    </div>
+                                </div>
+                                <div style="float: right; width: 100%; position: relative;">
+                                    <div style="position: absolute; right: 0% ;font-size: 16px; color: #262626;; margin: 0px;">
+
+                                        {{ books.4.year_of_publication }}
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="electronic_img"><img class="cus_img" src="{{ books.4.img_l }}"></div>
+                              <div class="btn_main">
+                                 <div class="buy_bt"><a href="#">Read now</a></div>
+                                 <div class="seemore_bt"><a href="{% url 'detail' books.4.ISBN %}">See More</a></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-4">
+                           <div class="box_main">
+                              {% if books.5.title|wordcount >= 5 %}
+                              <marquee behavior="alternate" SCROLLAMOUNT="1" direction="left"><h4 class="shirt_text">{{books.5.title}}</h4></marquee>
+                              {% else %}
+                              <h4 class="shirt_text">{{books.5.title}}</h4>
+                              {% endif %}
+                              <div style="height: 100%; display: flex; justify-content: space-around;">
+                                <div style="float: left; width: 100%;position: relative;">
+                                    <div style="position: absolute;width: 100%;font-size: 16px; color: #262626;; margin: 0px;">
+                                        {{ books.5.author }}
+                                    </div>
+                                </div>
+                                <div style="float: right; width: 100%; position: relative;">
+                                    <div style="position: absolute; right: 0% ;font-size: 16px; color: #262626;; margin: 0px;">
+
+                                        {{ books.5.year_of_publication }}
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="electronic_img"><img class="cus_img" src="{{ books.5.img_l }}"></div>
+                              <div class="btn_main">
+                                 <div class="buy_bt"><a href="#">Read now</a></div>
+                                 <div class="seemore_bt"><a href="{% url 'detail' books.5.ISBN %}">See More</a></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="col-lg-4 col-sm-4">
+                           <div class="box_main">
+                              {% if books.6.title|wordcount >= 5 %}
+                              <marquee behavior="alternate" SCROLLAMOUNT="1" direction="left"><h4 class="shirt_text">{{books.6.title}}</h4></marquee>
+                              {% else %}
+                              <h4 class="shirt_text">{{books.6.title}}</h4>
+                              {% endif %}
+                              <div style="height: 100%; display: flex; justify-content: space-around;">
+                                <div style="float: left; width: 100%;position: relative;">
+                                    <div style="position: absolute;width: 100%;font-size: 16px; color: #262626;; margin: 0px;">
+                                        {{ books.6.author }}
+                                    </div>
+                                </div>
+                                <div style="float: right; width: 100%; position: relative;">
+                                    <div style="position: absolute; right: 0% ;font-size: 16px; color: #262626;; margin: 0px;">
+
+                                        {{ books.6.year_of_publication }}
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="electronic_img"><img class="cus_img" src="{{ books.6.img_l }}"></div>
+                              <div class="btn_main">
+                                 <div class="buy_bt"><a href="#">Read now</a></div>
+                                 <div class="seemore_bt"><a href="{% url 'detail' books.6.ISBN %}">See More</a></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-4">
+                           <div class="box_main">
+                              {% if books.7.title|wordcount >= 5 %}
+                              <marquee behavior="alternate" SCROLLAMOUNT="1" direction="left"><h4 class="shirt_text">{{books.7.title}}</h4></marquee>
+                              {% else %}
+                              <h4 class="shirt_text">{{books.7.title}}</h4>
+                              {% endif %}
+                              <div style="height: 100%; display: flex; justify-content: space-around;">
+                                <div style="float: left; width: 100%;position: relative;">
+                                    <div style="position: absolute;width: 100%;font-size: 16px; color: #262626;; margin: 0px;">
+                                        {{ books.7.author }}
+                                    </div>
+                                </div>
+                                <div style="float: right; width: 100%; position: relative;">
+                                    <div style="position: absolute; right: 0% ;font-size: 16px; color: #262626;; margin: 0px;">
+
+                                        {{ books.7.year_of_publication }}
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="electronic_img"><img class="cus_img" src="{{ books.7.img_l }}"></div>
+                              <div class="btn_main">
+                                 <div class="buy_bt"><a href="#">Read now</a></div>
+                                 <div class="seemore_bt"><a href="{% url 'detail' books.7.ISBN %}">See More</a></div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-4">
+                           <div class="box_main">
+                              {% if books.8.title|wordcount >= 5 %}
+                              <marquee behavior="alternate" SCROLLAMOUNT="1" direction="left"><h4 class="shirt_text">{{books.8.title}}</h4></marquee>
+                              {% else %}
+                              <h4 class="shirt_text">{{books.8.title}}</h4>
+                              {% endif %}
+                              <div style="height: 100%; display: flex; justify-content: space-around;">
+                                <div style="float: left; width: 100%;position: relative;">
+                                    <div style="position: absolute;width: 100%;font-size: 16px; color: #262626;; margin: 0px;">
+                                        {{ books.8.author }}
+                                    </div>
+                                </div>
+                                <div style="float: right; width: 100%; position: relative;">
+                                    <div style="position: absolute; right: 0% ;font-size: 16px; color: #262626;; margin: 0px;">
+
+                                        {{ books.8.year_of_publication }}
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="electronic_img"><img class="cus_img" src="{{ books.8.img_l }}"></div>
+                              <div class="btn_main">
+                                 <div class="buy_bt"><a href="#">Read now</a></div>
+                                 <div class="seemore_bt"><a href="{% url 'detail' books.8.ISBN %}">See More</a></div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <br/>
+         <div style="text-align: center;">
+            {% if books.has_previous %}
+                <a class="btn btn-info" href="{% url 'books' %}?pagenum={{books.previous_page_number}}">Previous Page</a>
+            {% endif %}
+            {% if books.has_next %}
+                <a class="btn btn-info" href="{% url 'books' %}?pagenum={{books.next_page_number}}">Next Page</a>
+            {% endif %}
+         </div>
+         <br/>
+         <!-- copyright section end -->
+      <!-- Javascript files-->
+      <script src="{% static 'js/jquery.min.js' %}"></script>
+      <script src="{% static 'js/popper.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+      <script src="{% static 'js/plugin.js' %}"></script>
+      <!-- sidebar -->
+      <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+      <script src="{% static 'js/custom.js' %}"></script>
+      <script>
+         function openNav() {
+           document.getElementById("mySidenav").style.width = "250px";
+         }
+         
+         function closeNav() {
+           document.getElementById("mySidenav").style.width = "0";
+         }
+      </script>
+   </body>
+</html>
